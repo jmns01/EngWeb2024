@@ -9,4 +9,5 @@ UC do 3º ano de Engenharia informática na Universidado do Minho
 
 **Email:** a91671@alunos.uminho.pt
 
-**Fotografia:** <img src='imagem/JoaoManuelNovaisdaSilva.png' width='250'>
+**Fotografia:** 
+<img src='imagem/JoaoManuelNovaisdaSilva.png' width='250'>
