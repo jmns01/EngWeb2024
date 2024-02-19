@@ -71,7 +71,7 @@ streets.sort(key=lambda x: x[0])
 
 # Geração da página principal HTML
 for street_name, xml_file in streets:
-    detail_page_filename = f'{xml_file[:-4]}.html'
+    detail_page_filename = f'html/{xml_file[:-4]}.html'
     index_html_template += f'<li><a href="{detail_page_filename}">{street_name}</a></li>'
 index_html_template += '</ul></body></html>'
 
@@ -92,6 +92,15 @@ for street_name, xml_file in streets:
 
         rua_html_template += f"""<img src="{png_path}" alt="{legenda}" style="width: 1000px; height: auto;"><figcaption>{legenda}</figcaption>"""
     
+
+    fotos_atuais = os.listdir("./atual")
+    for foto in fotos_atuais:
+        nome = foto.split("-")[1].lower()
+        street = street_name.lower().strip().replace(' ', '')
+
+        if nome == street:
+            atual_path = os.path.join("../atual", foto)
+            rua_html_template += f"""<img src="{atual_path}" alt="Imagem atual" style="width: 1000px; height: auto;"><figcaption>Imagem atual</figcaption>"""
 
     ltree = etree.parse(os.path.join(xml_directory, xml_file)) # Necessário para filtrar o findall()
     lroot = ltree.getroot()
