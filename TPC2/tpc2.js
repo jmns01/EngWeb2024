@@ -17,7 +17,17 @@ fs.readFile('./db.json', 'utf-8', (err, jsonString) => {
             const trimmedPath = path.replace(/^\/+|\/+$/g, '');
         
             //console.log(trimmedPath);
-            if(trimmedPath == "alunos"){
+            if(trimmedPath == ""){
+                res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+                res.write("<h1>Listas</h1>");
+                res.write(`<ul>`);
+                res.write(`<li><a href="/alunos">Lista de Alunos</a></li>`);
+                res.write('<li><a href="/cursos">Lista de Cursos</a></li>');
+                res.write("</ul>")
+                res.end();
+
+            }
+            else if(trimmedPath == "alunos"){
                 res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
                 res.write('<h1> Lista de Alunos </h1>');
                 res.write('<ul>');
