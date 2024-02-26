@@ -50,7 +50,7 @@ fs.readFile('./db.json', 'utf-8', (err, jsonString) => {
                     res.write(`<li>ID: ${aluno.id}</li>`);
                     res.write(`<li>Data de Nascimento: ${aluno.dataNasc}</li>`);
                     if(curso){
-                        res.write(`<li><a href="/cursos/${aluno.curso}">Curso: ${curso.designacao}</a></li>`);
+                        res.write(`<li>Curso: <a href="/cursos/${aluno.curso}"> ${curso.designacao}</a></li>`);
                     }
                     else res.write(`<li>Curso: ${aluno.curso}</li>`);
                     res.write(`<li>Ano de Curso: ${aluno.anoCurso}</li>`);
@@ -85,7 +85,7 @@ fs.readFile('./db.json', 'utf-8', (err, jsonString) => {
                 res.write(`<ul>`);
                 res.write(`<li>Id: ${curso.id}</li>`);
                 res.write(`<li>Duração: ${curso.duracao}</li>`);
-                res.write(`<li> <a href="/instrumentos/${curso.instrumento.id}">Instumento: ${curso.instrumento["#text"]}</li>`);
+                res.write(`<li> Instumento: <a href="/instrumentos/${curso.instrumento.id}"> ${curso.instrumento["#text"]}</li>`);
                 res.write('</ul>');
                 res.end();
                 } 
