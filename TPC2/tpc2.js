@@ -39,10 +39,10 @@ fs.readFile('./db.json', 'utf-8', (err, jsonString) => {
             }
             else if (trimmedPath.startsWith('alunos/')) {
                 const id = trimmedPath.split("/")[1]
-                console.log(id);
+                //console.log(id);
                 const aluno = data.alunos.find(a => a.id === id);
                 const curso = data.cursos.find(c => c.id === aluno.curso);
-                console.log(curso);
+                //console.log(curso);
                 if (aluno) {
                     res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
                     res.write(`<h1> ${aluno.nome} </h1>`);
