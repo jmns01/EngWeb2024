@@ -101,7 +101,9 @@ exports.composerFormPage = function(d){
                 </footer>
             
             </div>
-    `
+        </body>
+    </html>
+`
 }
 
 exports.composerFormEditPage = function(a, d){
@@ -129,12 +131,12 @@ exports.composerFormEditPage = function(a, d){
                         <input class="w3-input w3-round" type="text" name="nome" value="${a.nome}"/>
                         <label>Biography</label>
                         <input class="w3-input w3-round" type="text" name="bio" value="${a.bio}"/>
-                        <label>Git</label>
-                        <input class="w3-input w3-round" type="text" name="gitlink" value="${a.dataNasc}"/>
-                        <label>Git</label>
-                        <input class="w3-input w3-round" type="text" name="gitlink" value="${a.dataObito}"/>
-                        <label>Git</label>
-                        <input class="w3-input w3-round" type="text" name="gitlink" value="${a.periodo}"/>
+                        <label>Birth Date</label>
+                        <input class="w3-input w3-round" type="text" name="nascimento" value="${a.dataNasc}"/>
+                        <label>Passing Date</label>
+                        <input class="w3-input w3-round" type="text" name="morte" value="${a.dataObito}"/>
+                        <label>Period</label>
+                        <input class="w3-input w3-round" type="text" name="periodo" value="${a.periodo}"/>
                     </fieldset>
                 `           
 
@@ -148,6 +150,8 @@ exports.composerFormEditPage = function(a, d){
                 </footer>
             
             </div>
+        </body>
+    </html>
     `
     return pagHTML
 }
@@ -209,7 +213,7 @@ exports.periodosListPage = function(slist, d){
             <div class="w3-card-4">
 
                 <header class="w3-container w3-teal">
-                    <h1>Composers List
+                    <h1> Period List
                     <a class="w3-btn w3-round w3-grey" href="/periodos/registo">+</a>
                     </h1>
                     
@@ -285,6 +289,8 @@ exports.periodoFormPage = function(d){
                 </footer>
             
             </div>
+        </body>
+    </html>
     `
 }
 
@@ -310,7 +316,7 @@ exports.periodoFormEditPage = function(p, d){
                         <label>Id</label>
                         <input class="w3-input w3-round" type="text" name="id" readonly value="${a.id}"/>
                         <label>Name</label>
-                        <input class="w3-input w3-round" type="text" name="nome" value="${a.nome}"/>
+                        <input class="w3-input w3-round" type="text" name="nome" value="${a.periodo}"/>
                     </fieldset>
                 `           
 
@@ -324,6 +330,8 @@ exports.periodoFormEditPage = function(p, d){
                 </footer>
             
             </div>
+        </body>
+    </html>
     `
     return pagHTML
 }
@@ -360,8 +368,8 @@ exports.composerPage = function( c, d ){
             </footer>
         </div>
     </body>
-    </html>
-    `
+</html>
+`
     return pagHTML
 }
 
@@ -391,8 +399,8 @@ exports.periodoPage = function(p,d){
             </footer>
         </div>
     </body>
-    </html>
-    `
+</html>
+`
     return pagHTML
 }
 

@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  .w3-card-4 
+    header.w3-container.w3-teal
+        h1 TPC5 - A91671
+
+        .w3-container
+            ul.w3-ul.w3-card-4(style="width:50%")
+                li
+                    b Composers:
+                    a(href="/compositores") List of Composers
+                li
+                    b Periods:
+                    a(href="/periodos") List of Periods
+        
+        .w3-container.w3-margin-8
+        footer.w3-container.w3-teal
+            h5 
+                span Gerado por galuno::EngWeb2024 em #{date} - [
+                a(href="/") Voltar
+                span ]
