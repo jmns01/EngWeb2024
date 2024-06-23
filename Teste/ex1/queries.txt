@@ -1,0 +1,11 @@
+1) Quantos registos estão na base de dados: 
+	db.contratos.countDocuments()
+
+2) Quantos registos de contratos têm o tipo de procedimento com valor "Ajuste Direto Regime Geral": 	db.contratos.count({tipoprocedimento : "Ajuste Direto Regime Geral"})
+
+3) Qual a lista de entidades comunicantes (ordenada alfabeticamente e sem repetições): 	db.contratos.distinct("entidade_comunicante").sort()
+
+4) Qual a distribuição de contratos por tipo de procedimento (quantos contratos tem cada tipo de procedimento): 	db.contratos.aggregate([{$group : {_id: "$tipoprocedimento", count: {$sum: 1}}}])
+
+5) db.contratos.aggregate([{$addFields: {precoContratualDouble: 
+	{$convert: {input: { $replaceAll: { input: "$precoContratual", find: ",", replacement: "." } }, to: "double", onError: 0, onNull: 0}}}},{$group: {_id: "$entidade_comunicante", totalMontante: { $sum: "$precoContratualDouble" }}}])

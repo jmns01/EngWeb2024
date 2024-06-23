@@ -1,0 +1,45 @@
+extends layout
+
+block content
+    .w3-card-4 
+        header.w3-container.w3-teal
+            h1 Composer #{c._id}
+
+        .w3-container
+            ul.w3-ul.w3-card-4(style="width:50%")
+                li
+                    b Num Anuncio:
+                    span= c.nAnuncio
+                li
+                    b Tipo Procedimento: 
+                    span= c.tipoprocedimento
+                li
+                    b Objecto do Contrato:
+                    span= c.objectoContrato
+                li 
+                    b Data de Publicação:
+                    span= c.dataPublicacao
+                li
+                    b Data de Celebração do Contrado:
+                    span= c.dataCelebracaoContrato
+                li 
+                    b Preço Contratual 
+                    span= c.precoContratual
+                li
+                    b Prazo de Execução
+                    span= c.prazoExecucao
+                li 
+                    b NPIC da Entidade Comunicante
+                    span= c.NIPC_entidade_comunicante
+                li 
+                    b Entidade Comunicante 
+                    span= c.entidade_comunicante
+                li 
+                    b Fundamentação 
+                    span= c.fundamentacao
+        .w3-container.w3-margin-8
+        footer.w3-container.w3-teal
+            h5 
+                span Gerado por João Manuel Novais da Silva::EngWeb2024 em #{date} - [
+                a(href="/") Voltar
+                span ]
